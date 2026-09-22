@@ -1,32 +1,17 @@
 {
-  "name": "chrono-svelte-template",
+  "name": "figpeek",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "config": {
-    "dist": "dist",
-    "domain": "figpeek"
-  },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "vite build && surge ./%npm_package_config_dist% --domain %npm_package_config_domain%.surge.sh"
+    "build:ui": "vite build --config vite.config.ui.ts",
+    "build:code": "vite build --config vite.config.code.ts",
+    "build": "npm run build:ui && npm run build:code"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
-    "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
-    "surge": "^0.23.1",
-    "svelte": "^3.44.0",
-    "tailwindcss": "^3.0.23",
-    "vite": "^2.8.0"
-  },
-  "dependencies": {
-    "@joeattardi/emoji-button": "^4.6.2",
-    "html2canvas": "^1.4.1",
-    "svelte-scrollto": "^0.2.0",
-    "svelte-seo": "^1.4.0",
-    "svelte-spa-router": "^3.2.0"
+    "@figma/plugin-typings": "^1.138.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vite-plugin-singlefile": "^2.3.3"
   }
 }
